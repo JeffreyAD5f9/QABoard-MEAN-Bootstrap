@@ -1,0 +1,25 @@
+<div ng-controller="UsersController as UC">
+
+<h3>Register New User</h3>
+  <form>
+      Name: <input type='text' ng-model='UC.newUser.name'>
+      <input type='submit' value='Register' ng-click='UC.addUser(UC.newUser)'>
+  </form>
+  <p class='errors' ng-repeat="error in UC.regErrors"> {{error}} </p>
+
+<h3>Login</h3>
+  <form>
+    <input type="text"  ng-model = "UC.userLog.name">
+    <input type="submit" value = "Login" ng-click='UC.loginUser(UC.userLog)'>
+  </form>
+  <p class='errors' ng-repeat="error in UC.logErrors track by $index"> {{error}} </p>
+
+  <h3>Developer View: Track Users</h3>
+    <table ng-init = "UC.index()">
+      <tr><th>Name</th></tr>
+      <tr ng-repeat="user in UC.users track by $index">
+        <td>{{user.name}}</td>
+      </tr>
+    </table>
+
+</div>

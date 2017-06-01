@@ -1,0 +1,34 @@
+<div ng-controller="QuestionsController as QC"  ng-init = "QC.displayQuestion()">
+
+  <a href = "/#!/welcome">Return to Polls</a>
+  <!--<button ng-click= "QC.answerQuest(QC.question._id)">Answer Question</button>-->
+  <a href = "/">Logout</a>
+
+      <h1>{{QC.question.question}}</h1>
+
+
+      <table ng-init = "QC.answerIndex()">
+        <tr><th>Option | </th><th>Votes | </th> <th>Action</th></tr>
+        <tr>
+          <td>{{QC.question.option1}}</td>
+          <td>{{QC.question.option1Votes}}</td>
+          <td><button ng-click="QC.addVote('1', QC.question._id)">Vote</button></td>
+        </tr>
+        <tr>
+          <td>{{QC.question.option2}}</td>
+          <td>{{QC.question.option2Votes}}</td>
+          <td><button ng-click="QC.addVote('2', QC.question._id)">Vote</button></td>
+        </tr>
+        <tr>
+          <td>{{QC.question.option3}}</td>
+          <td>{{QC.question.option3Votes}}</td>
+          <td><button ng-click="QC.addVote('3', QC.question._id)">Vote</button></td>
+        </tr>
+        <tr>
+          <td>{{QC.question.option4}}</td>
+          <td>{{QC.question.option4Votes}}</td>
+          <td><button ng-click="QC.addVote('4', QC.question._id)">Vote</button></td>
+        </tr>
+      </table>
+
+  </div>

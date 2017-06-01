@@ -1,0 +1,19 @@
+<div ng-controller="QuestionsController as QC">
+
+  <h1>New Question</h1>
+  <a href = "/#!/welcome">Home</a>
+  <a href = "/">Logout</a>
+
+  <form>
+    <h4>  Question: <input type='text' ng-model='QC.newQuestion.question'> </h4>
+    <p> Option1: <input type='text' ng-model='QC.newQuestion.option1'> </p>
+    <p>  Option2: <input type='text' ng-model='QC.newQuestion.option2'> </p>
+    <p>  Option3: <input type='text' ng-model='QC.newQuestion.option3'> </p>
+    <p>  Option4: <input type='text' ng-model='QC.newQuestion.option4'> </p>
+      <input type='submit' value='Post Survey' ng-click='QC.addQuestion(QC.newQuestion)'>
+  </form>
+  <a href = "/#!/welcome">Cancel</a>
+  <p class='errors' ng-repeat="error in QC.questionErrors track by $index"> {{error}} </p>
+
+
+</div>
