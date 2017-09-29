@@ -1,34 +1,45 @@
 <div ng-controller="QuestionsController as QC"  ng-init = "QC.displayQuestion()">
+  <div class = "row xSpc xSpc2">
+    <div class = "col-xs-2 col-sm-4 col-md-4 col-lg-8 xSpc">
+      <a href = "/#!/welcome" class = "btn-info linkBtn xSpc">Return to Polls</a>
+    </div>
+    <div class = "col-xs-2 col-sm-4 col-md-4 col-lg-8 xSpc">
+      <a href = "/" class = "btn-info linkBtn xSpc">Logout</a>
+    </div>
+  </div>
 
-  <a href = "/#!/welcome">Return to Polls</a>
-  <!--<button ng-click= "QC.answerQuest(QC.question._id)">Answer Question</button>-->
-  <a href = "/">Logout</a>
+  <div class = "row xSpc xSpc2 greenblock">
+    <div class = "col-xs-2 col-sm-4 col-md-4 col-lg-8">
+      <h1 class = "greenblock">{{QC.question.question}}</h1>
+    </div>
+  </div>
 
-      <h1>{{QC.question.question}}</h1>
-
-
-      <table ng-init = "QC.answerIndex()">
-        <tr><th>Option | </th><th>Votes | </th> <th>Action</th></tr>
+  <div class = "row xSpc xSpc2">
+    <div class = "col-xs-2 col-sm-4 col-md-4 col-lg-8">
+      <table ng-init = "QC.answerIndex()" class = "table table-hover">
+        <tr><th>Option</th><th>Votes</th> <th>Action</th></tr>
         <tr>
           <td>{{QC.question.option1}}</td>
           <td>{{QC.question.option1Votes}}</td>
-          <td><button ng-click="QC.addVote('1', QC.question._id)">Vote</button></td>
+          <td><button ng-click="QC.addVote('1', QC.question._id)" class = "btn">Vote</button></td>
         </tr>
         <tr>
           <td>{{QC.question.option2}}</td>
           <td>{{QC.question.option2Votes}}</td>
-          <td><button ng-click="QC.addVote('2', QC.question._id)">Vote</button></td>
+          <td><button ng-click="QC.addVote('2', QC.question._id)" class = "btn">Vote</button></td>
         </tr>
         <tr>
           <td>{{QC.question.option3}}</td>
           <td>{{QC.question.option3Votes}}</td>
-          <td><button ng-click="QC.addVote('3', QC.question._id)">Vote</button></td>
+          <td><button ng-click="QC.addVote('3', QC.question._id)" class = "btn">Vote</button></td>
         </tr>
         <tr>
           <td>{{QC.question.option4}}</td>
           <td>{{QC.question.option4Votes}}</td>
-          <td><button ng-click="QC.addVote('4', QC.question._id)">Vote</button></td>
+          <td><button ng-click="QC.addVote('4', QC.question._id)" class = "btn">Vote</button></td>
         </tr>
       </table>
+    </div>
+  </div>
 
   </div>

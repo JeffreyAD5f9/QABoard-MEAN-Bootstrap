@@ -1,19 +1,39 @@
 <div ng-controller="QuestionsController as QC">
 
 <div ng-init = "UC.session()">
-  <h1>Welcome {{UC.user.name}}</h1>
-  <a href = '/#!/postSurvey' >Post a Question</a>
-  <a href = "#" ng-click = "UC.logout()" >Logout</a>
+  <div class = "row xSpc xSpc2 greenblock">
+    <div class = "col-xs-2 col-sm-4 col-md-4 col-lg-8">
+      <h1>Welcome {{UC.user.name}}</h1>
+    </div>
+  </div>
+
+    <div class = "row xSpc">
+      <div class = "col-xs-2 col-sm-4 col-md-4 col-lg-8 xSpc">
+        <a href = '/#!/postSurvey' class = "btn-info linkBtn">Post a Question</a>
+      </div>
+
+      <div class = "col-xs-2 col-sm-4 col-md-4 col-lg-8 xSpc">
+        <a href = "#" ng-click = "UC.logout()" class = "btn-info linkBtn">Logout</a>
+      </div>
+
+    </div>
+
 </div>
 
-  <input type="text" ng-model="search.question">
-  <table ng-init = "QC.index()">
-    <tr><th> Name |</th><th>Question |</th><th> Date Posted |</th><th> Action</th></tr>
+<div class = "row xSpc xSpc2">
+  <div class = "col-xs-2 col-sm-4 col-md-4 col-lg-8">
+    <h4 class = "greenblock">Active Search: Questions</h4>
+    <input type="text" ng-model="search.question">
+  </div>
+</div>
+
+  <table ng-init = "QC.index()" class = "table table-hover">
+    <tr><th> Name</th><th>Question</th><th> Date Posted</th><th> Action</th></tr>
     <tr ng-repeat="question in QC.questions | filter:search:strict track by $index">
       <td>{{question.user.name}}</td>
       <td><a href = "#" ng-click = "QC.showQuestion(question._id)" >{{question.question}}</a></td>
       <td>{{question.createdAt|date:'mediumDate'}}</td>
-      <td><button ng-click= "QC.deleteQuestion(question._id)" ng-if="question.user._id == UC.user._id">Delete</button></td>
+      <td><button ng-click= "QC.deleteQuestion(question._id)" ng-if="question.user._id == UC.user._id" class = "btn">Delete</button></td>
     </tr>
   </table>
 

@@ -1,19 +1,43 @@
 <div ng-controller="QuestionsController as QC">
 
-  <h1>New Question</h1>
-  <a href = "/#!/welcome">Home</a>
-  <a href = "/">Logout</a>
+  <div class = "row xSpc xSpc2 greenblock">
+    <div class = "col-xs-2 col-sm-4 col-md-4 col-lg-8">
+      <h1 class = "greenblock">New Question</h1>
+    </div>
+  </div>
 
-  <form>
-    <h4>  Question: <input type='text' ng-model='QC.newQuestion.question'> </h4>
-    <p> Option1: <input type='text' ng-model='QC.newQuestion.option1'> </p>
-    <p>  Option2: <input type='text' ng-model='QC.newQuestion.option2'> </p>
-    <p>  Option3: <input type='text' ng-model='QC.newQuestion.option3'> </p>
-    <p>  Option4: <input type='text' ng-model='QC.newQuestion.option4'> </p>
-      <input type='submit' value='Post Survey' ng-click='QC.addQuestion(QC.newQuestion)'>
-  </form>
-  <a href = "/#!/welcome">Cancel</a>
-  <p class='errors' ng-repeat="error in QC.questionErrors track by $index"> {{error}} </p>
+  <div class = "row xSpc xSpc2">
+    <div class = "col-xs-2 col-sm-4 col-md-2 col-lg-2 xSpc">
+      <a href = "/#!/welcome" class = "btn-info linkBtn">Home</a>
+    </div>
+    <div class = "col-xs-2 col-sm-2 col-md-2 col-lg-2 xSpc">
+      <a href = "/" class = "btn-info linkBtn">Logout</a>
+    </div>
+  </div>
 
+  <div class = "row xSpc xSpc2 greenblock">
+    <div class = "col-xs-2 col-sm-4 col-md-4 col-lg-8">
+      <form>
+        <h4 class = "greenblock">  Question: <input type='text' ng-model='QC.newQuestion.question'> </h4>
+    </div>
+  </div>
+
+  <div class = "row xSpc xSpc2">
+    <div class = "col-xs-2 col-sm-4 col-md-4 col-lg-8">
+        <p> Option1: <input type='text' ng-model='QC.newQuestion.option1'> </p>
+        <p>  Option2: <input type='text' ng-model='QC.newQuestion.option2'> </p>
+        <p>  Option3: <input type='text' ng-model='QC.newQuestion.option3'> </p>
+        <p>  Option4: <input type='text' ng-model='QC.newQuestion.option4'> </p>
+          <input class = "btn" type='submit' value='Post Survey' ng-click='QC.addQuestion(QC.newQuestion)'>
+      </form>
+    </div>
+  </div>
+
+  <div class = "row xSpc xSpc2">
+    <div class = "col-xs-2 col-sm-4 col-md-4 col-lg-8">
+      <a href = "/#!/welcome" class = "btn-info linkBtn">Cancel</a>
+      <p class='errors' ng-repeat="error in QC.questionErrors track by $index"> {{error}} </p>
+    </div>
+  </div>
 
 </div>
